@@ -1,1 +1,10 @@
 <h2>Available drones</h2>
+<div class="container">
+{{#each alltheDrones}}
+<h1>{{this.name}}</h1>
+<h2>{{this.propellers}}</h2>
+<h2>{{this.speed}}</h2>
+<a href='/drones/{{this.id}}/edit'>Edit your Drone</a>
+{{/each}}
+
+</div>
