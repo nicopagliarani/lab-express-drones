@@ -5,6 +5,9 @@
 <h2>{{this.propellers}}</h2>
 <h2>{{this.speed}}</h2>
 <a href='/drones/{{this.id}}/edit'>Edit your Drone</a>
+<form action="/drones/{{this._id}}/delete" method="post">
+<button type="submit">Delete</button>
+</form>
 {{/each}}
 
 </div>

@@ -47,9 +47,11 @@ router.post('/drones/:id/edit',async (req, res, next) => {
   res.redirect("/drones" + droneId);
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.post('/drones/:id/delete', async (req, res, next) => {
   // Iteration #5: Delete the drone
-  // ... your code here
+  const droneId = mongoose.Types.ObjectId(req.params.id);
+  await Drone.findByIdAndDelete(droneId);
+  res.redirect('/drones');
 });
 
 module.exports = router;
